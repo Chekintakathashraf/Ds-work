@@ -1,0 +1,50 @@
+# Maximum frequency character in String
+
+'''Method 1 : Naive method + max()'''
+
+# Python 3 code to demonstrate
+# Maximum frequency character in String
+# naive method
+
+# initializing string
+test_str = "GeeksforGeeks"
+
+# printing original string
+print ("The original string is : " + test_str)
+
+# using naive method to get
+# Maximum frequency character in String
+all_freq = {}
+for i in test_str:
+    if i in all_freq:
+        all_freq[i] += 1
+    else:
+        all_freq[i] = 1
+        res = max(all_freq, key = all_freq.get)
+
+# printing result
+print ("The maximum of all characters in GeeksforGeeks is : " + str(res))
+
+
+print('**********************')
+
+'''Method 2 : Using collections.Counter() + max() '''
+
+# Python 3 code to demonstrate
+# Maximum frequency character in String
+# collections.Counter() + max()
+from collections import Counter
+
+# initializing string
+test_str = "GeeksforGeeks"
+
+# printing original string
+print ("The original string is : " + test_str)
+
+# using collections.Counter() + max() to get
+# Maximum frequency character in String
+res = Counter(test_str)
+res = max(res, key = res.get)
+
+# printing result
+print ("The maximum of all characters in GeeksforGeeks is : " + str(res))
